@@ -11,12 +11,13 @@ import com.ecjtu.po.Job;
 import com.ecjtu.service.JobService;
 
 @Controller
+@RequestMapping("/job")
 public class JobController {
 
 	@Autowired
 	private JobService jobService;
 	
-	@RequestMapping("/job")
+	@RequestMapping("/findAll.action")
 	public String findAll(Model model) {
 		List<Job> jobs = jobService.selectAll();
 		model.addAttribute("jobs", jobs);

@@ -12,11 +12,12 @@ import com.ecjtu.po.Refer;
 import com.ecjtu.service.ReferService;
 
 @Controller
+@RequestMapping("/refer")
 public class ReferController {
 	@Autowired
 	private ReferService referService;
 	
-	@RequestMapping("/refer")
+	@RequestMapping("/findAll.action")
 	public String findAll(Model model) {
 		List<Refer> refers = referService.selectAll();
 		model.addAttribute("refers", refers);

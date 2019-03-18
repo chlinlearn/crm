@@ -11,10 +11,11 @@ import com.ecjtu.po.Post;
 import com.ecjtu.service.PostService;
 
 @Controller
+@RequestMapping("/post")
 public class PostController {
 	@Autowired
 	private PostService postService;
-	@RequestMapping("/post")
+	@RequestMapping("/findAll.action")
 	public String findAll(Model model) {
 		List<Post> posts = postService.selectAll();
 		model.addAttribute("posts", posts);

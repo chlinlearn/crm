@@ -11,10 +11,11 @@ import com.ecjtu.po.Staff;
 import com.ecjtu.service.StaffService;
 
 @Controller
+@RequestMapping("/staff")
 public class StaffController {
 	@Autowired
 	private StaffService staffService;
-	@RequestMapping("/staff")
+	@RequestMapping("/findAll.action")
 	public String findAll(Model model) {
 		List<Staff> staffs = staffService.selectAll();
 		model.addAttribute("staffs", staffs);

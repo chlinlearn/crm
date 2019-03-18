@@ -8,11 +8,12 @@ import java.util.List;
 import com.ecjtu.service.DepartmentService;
 
 @Controller
+@RequestMapping("/department")
 public class DepartmentController {
 	@Autowired
 	private DepartmentService departmentService;
 	
-	@RequestMapping("/department")
+	@RequestMapping("/findAll.action")
 	public String findAll(Model model) {
 		List<Department> departments = departmentService.selectAll();
 		model.addAttribute("departments", departments);

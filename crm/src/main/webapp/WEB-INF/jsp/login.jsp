@@ -6,9 +6,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>登录页面</title>
 
-<link href="./css/style.css" type="text/css" rel="stylesheet">
-<link href="./css/boot-crm.css" type="text/css" rel="stylesheet">
-<script src="./js/jquery-1.11.3.min.js">
+<link href="http://localhost:8092/crm/css/style.css" type="text/css" rel="stylesheet">
+<link href="http://localhost:8092/crm/css/boot-crm.css" type="text/css" rel="stylesheet">
+<script src="http://localhost:8092/crm/js/jquery-1.11.3.min.js">
 </script>
 <meta content="MSHTML 6.00.2600.0" name="GENERATOR">
 <script>

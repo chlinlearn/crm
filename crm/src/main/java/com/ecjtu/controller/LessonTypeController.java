@@ -11,11 +11,12 @@ import com.ecjtu.po.LessonType;
 import com.ecjtu.service.LessonTypeService;
 
 @Controller
+@RequestMapping("/lessontype")
 public class LessonTypeController {
 
 	@Autowired
 	private LessonTypeService lessonTypeService;
-	@RequestMapping("/lessontype")
+	@RequestMapping("/findAll.action")
 	public String findAll(Model model) {
 		List<LessonType> lessonTypes = lessonTypeService.selectAll();
 		model.addAttribute("lessonTypes", lessonTypes);

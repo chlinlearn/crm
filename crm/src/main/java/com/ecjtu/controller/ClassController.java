@@ -11,12 +11,13 @@ import com.ecjtu.po.Class;
 import com.ecjtu.service.ClassService;
 
 @Controller
+@RequestMapping("/class")
 public class ClassController {
 
 	@Autowired
 	private ClassService classService;
 	
-	@RequestMapping("/class")
+	@RequestMapping("/findAll.action")
 	public String findAll(Model model) {
 		List<Class> classes = classService.selectAll();
 		model.addAttribute("classes", classes);

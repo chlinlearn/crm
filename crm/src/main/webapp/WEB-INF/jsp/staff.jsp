@@ -7,16 +7,16 @@
 <title>学员关系管理系统CRM</title>
 	<!-- 引入css样式文件 -->
 	<!-- Bootstrap Core CSS -->
-	<link href="./css/bootstrap.min.css" rel="stylesheet">
+	<link href="http://localhost:8092/crm/css/bootstrap.min.css" rel="stylesheet">
 	<!-- MetisMenu CSS -->
-	<link href="./css/metisMenu.min.css" rel="stylesheet">
+	<link href="http://localhost:8092/crm/css/metisMenu.min.css" rel="stylesheet">
 	<!-- DataTables CSS -->
-	<link href="./css/dataTables.bootstrap.css" rel="stylesheet">
+	<link href="http://localhost:8092/crm/css/dataTables.bootstrap.css" rel="stylesheet">
 	<!-- Custom CSS -->
-	<link href="./css/sb-admin-2.css" rel="stylesheet">
+	<link href="http://localhost:8092/crm/css/sb-admin-2.css" rel="stylesheet">
 	<!-- Custom Fonts -->
-	<link href="./css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	<link href="./css/boot-crm.css" rel="stylesheet" type="text/css">
+	<link href="http://localhost:8092/crm/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="http://localhost:8092/crm/css/boot-crm.css" rel="stylesheet" type="text/css">
     <style>
         .panel-group{max-height:770px;overflow: auto;}
         .leftMenu{margin:10px;margin-top:5px;}
@@ -547,16 +547,16 @@
 </div>
 <!-- 引入js文件 -->
 <!-- jQuery -->
-<script src="./js/jquery-1.11.3.min.js"></script>
+<script src="http://localhost:8092/crm/js/jquery-1.11.3.min.js"></script>
 <!-- Bootstrap Core JavaScript -->
-<script src="./js/bootstrap.min.js"></script>
+<script src="http://localhost:8092/crm/js/bootstrap.min.js"></script>
 <!-- Metis Menu Plugin JavaScript -->
-<script src="./js/metisMenu.min.js"></script>
+<script src="http://localhost:8092/crm/js/metisMenu.min.js"></script>
 <!-- DataTables JavaScript -->
-<script src="./js/jquery.dataTables.min.js"></script>
-<script src="./js/dataTables.bootstrap.min.js"></script>
+<script src="http://localhost:8092/crm/js/jquery.dataTables.min.js"></script>
+<script src="http://localhost:8092/crm/js/dataTables.bootstrap.min.js"></script>
 <!-- Custom Theme JavaScript -->
-<script src="./js/sb-admin-2.js"></script>
+<script src="http://localhost:8092/crm/js/sb-admin-2.js"></script>
 <!-- 编写js代码 -->
 <script type="text/javascript">
 $(function(){

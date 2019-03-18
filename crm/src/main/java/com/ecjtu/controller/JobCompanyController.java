@@ -11,11 +11,12 @@ import com.ecjtu.po.JobCompany;
 import com.ecjtu.service.JobCompanyService;
 
 @Controller
+@RequestMapping("/jobcompany")
 public class JobCompanyController {
 
 	@Autowired
 	private JobCompanyService jobCompanyService;
-	@RequestMapping("/jobcompany")
+	@RequestMapping("/findAll.action")
 	public String findAll(Model model) {
 		List<JobCompany> jobCompanies = jobCompanyService.selectAll();
 		model.addAttribute("jobCompanies", jobCompanies);

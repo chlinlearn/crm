@@ -12,10 +12,11 @@ import com.ecjtu.po.Student;
 import com.ecjtu.service.StudentService;
 
 @Controller
+@RequestMapping("/student")
 public class StudentController {
 	@Autowired
 	private StudentService studentService;
-	@RequestMapping("/student")
+	@RequestMapping("/findAll.action")
 	public String findAll(Model model) {
 		List<Student> students = studentService.selectAll();
 		model.addAttribute("students", students);
