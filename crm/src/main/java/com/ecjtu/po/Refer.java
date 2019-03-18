@@ -6,7 +6,7 @@ public class Refer {
     private String source;
 
     private Integer userid;
-
+     
     private String username;
 
     private String gender;

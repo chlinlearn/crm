@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ecjtu.dao.StudentMapper">
+  <resultMap id="BaseResultMap" type="com.ecjtu.po.Student">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="stuName" jdbcType="VARCHAR" property="stuname" />
+    <result column="stuCode" jdbcType="VARCHAR" property="stucode" />
+    <result column="stuSex" jdbcType="VARCHAR" property="stusex" />
+    <result column="referid" jdbcType="INTEGER" property="referid" />
+    <result column="classid" jdbcType="INTEGER" property="classid" />
+    <result column="beginTime" jdbcType="TIMESTAMP" property="begintime" />
+    <result column="jobTime" jdbcType="TIMESTAMP" property="jobtime" />
+    <result column="stuState" jdbcType="VARCHAR" property="stustate" />
+    <result column="checkLevel" jdbcType="VARCHAR" property="checklevel" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, stuName, stuCode, stuSex, referid, classid, beginTime, jobTime, stuState, checkLevel, 
+    remark
+  </sql>
+    <select id="selectAll" resultMap="BaseResultMap">
+    select * from crm_student
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from crm_student
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from crm_student
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ecjtu.po.Student">
+    insert into crm_student (id, stuName, stuCode, 
+      stuSex, referid, classid, 
+      beginTime, jobTime, stuState, 
+      checkLevel, remark)
+    values (#{id,jdbcType=INTEGER}, #{stuname,jdbcType=VARCHAR}, #{stucode,jdbcType=VARCHAR}, 
+      #{stusex,jdbcType=VARCHAR}, #{referid,jdbcType=INTEGER}, #{classid,jdbcType=INTEGER}, 
+      #{begintime,jdbcType=TIMESTAMP}, #{jobtime,jdbcType=TIMESTAMP}, #{stustate,jdbcType=VARCHAR}, 
+      #{checklevel,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ecjtu.po.Student">
+    insert into crm_student
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="stuname != null">
+        stuName,
+      </if>
+      <if test="stucode != null">
+        stuCode,
+      </if>
+      <if test="stusex != null">
+        stuSex,
+      </if>
+      <if test="referid != null">
+        referid,
+      </if>
+      <if test="classid != null">
+        classid,
+      </if>
+      <if test="begintime != null">
+        beginTime,
+      </if>
+      <if test="jobtime != null">
+        jobTime,
+      </if>
+      <if test="stustate != null">
+        stuState,
+      </if>
+      <if test="checklevel != null">
+        checkLevel,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="stuname != null">
+        #{stuname,jdbcType=VARCHAR},
+      </if>
+      <if test="stucode != null">
+        #{stucode,jdbcType=VARCHAR},
+      </if>
+      <if test="stusex != null">
+        #{stusex,jdbcType=VARCHAR},
+      </if>
+      <if test="referid != null">
+        #{referid,jdbcType=INTEGER},
+      </if>
+      <if test="classid != null">
+        #{classid,jdbcType=INTEGER},
+      </if>
+      <if test="begintime != null">
+        #{begintime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="jobtime != null">
+        #{jobtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="stustate != null">
+        #{stustate,jdbcType=VARCHAR},
+      </if>
+      <if test="checklevel != null">
+        #{checklevel,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ecjtu.po.Student">
+    update crm_student
+    <set>
+      <if test="stuname != null">
+        stuName = #{stuname,jdbcType=VARCHAR},
+      </if>
+      <if test="stucode != null">
+        stuCode = #{stucode,jdbcType=VARCHAR},
+      </if>
+      <if test="stusex != null">
+        stuSex = #{stusex,jdbcType=VARCHAR},
+      </if>
+      <if test="referid != null">
+        referid = #{referid,jdbcType=INTEGER},
+      </if>
+      <if test="classid != null">
+        classid = #{classid,jdbcType=INTEGER},
+      </if>
+      <if test="begintime != null">
+        beginTime = #{begintime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="jobtime != null">
+        jobTime = #{jobtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="stustate != null">
+        stuState = #{stustate,jdbcType=VARCHAR},
+      </if>
+      <if test="checklevel != null">
+        checkLevel = #{checklevel,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ecjtu.po.Student">
+    update crm_student
+    set stuName = #{stuname,jdbcType=VARCHAR},
+      stuCode = #{stucode,jdbcType=VARCHAR},
+      stuSex = #{stusex,jdbcType=VARCHAR},
+      referid = #{referid,jdbcType=INTEGER},
+      classid = #{classid,jdbcType=INTEGER},
+      beginTime = #{begintime,jdbcType=TIMESTAMP},
+      jobTime = #{jobtime,jdbcType=TIMESTAMP},
+      stuState = #{stustate,jdbcType=VARCHAR},
+      checkLevel = #{checklevel,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -359,51 +359,23 @@
 							</tr>
 						</thead>
 						<tbody>
+						<c:forEach items="${classes}" var="classes">
 							<tr>
-									<td>2</td>
-									<td>2期JavaEE</td> 
-									<td>Java基础</td> 
-									<td>2015-04-28 00:00:00.0</td>
-		 							<td>2016-01-01 15:02:02.0</td>
-									<td>已开课</td>
-									<td>67</td>
-									<td>0</td>
-									<td>0</td>
+									<td>${classes.id}</td>
+									<td>${classes.classname}</td> 
+									<td>${classes.lessontypeid}</td> 
+									<td>${classes.begintime}</td>
+		 							<td>${classes.endtime}</td>
+									<td>${classes.state}</td>
+									<td>${classes.totalcount}</td>
+									<td>${classes.gocount}</td>
+									<td>${classes.leavecount}</td>
 								<td>
-										<a href="crmclass/list.action#" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#crmclassEditDialog" onclick="editcrmclass(2)">修改</a>
-										<a href="crmclass/list.action#" class="btn btn-danger btn-xs" onclick="deletecrmclass(2)">删除</a>
+										<a href="crmclass/list.action#" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#crmclassEditDialog" onclick="editcrmclass(${classes.id})">修改</a>
+										<a href="crmclass/list.action#" class="btn btn-danger btn-xs" onclick="deletecrmclass(${classes.id})">删除</a>
 									</td>
 								</tr>
-							<tr>
-									<td>3</td>
-									<td>3期JavaEE</td> 
-									<td>Java基础</td> 
-									<td>2015-03-29 00:00:00.0</td>
-		 							<td>2016-02-09 15:02:15.0</td>
-									<td>已开课</td>
-									<td>120</td>
-									<td>0</td>
-									<td>0</td>
-								<td>
-										<a href="crmclass/list.action#" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#crmclassEditDialog" onclick="editcrmclass(3)">修改</a>
-										<a href="crmclass/list.action#" class="btn btn-danger btn-xs" onclick="deletecrmclass(3)">删除</a>
-									</td>
-								</tr>
-							<tr>
-									<td>1</td>
-									<td>1期JavaEE</td> 
-									<td>Java就业</td> 
-									<td>2015-03-10 00:00:00.0</td>
-		 							<td>2015-04-30 00:00:00.0</td>
-									<td>已结束</td>
-									<td>80</td>
-									<td>80</td>
-									<td>0</td>
-								<td>
-										<a href="crmclass/list.action#" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#crmclassEditDialog" onclick="editcrmclass(1)">修改</a>
-										<a href="crmclass/list.action#" class="btn btn-danger btn-xs" onclick="deletecrmclass(1)">删除</a>
-									</td>
-								</tr>
+							</c:forEach>
 							</tbody>
 					</table>
 					<div class="col-md-12 text-right">

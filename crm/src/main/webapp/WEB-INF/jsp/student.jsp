@@ -355,19 +355,20 @@
 							</tr>
 						</thead>
 						<tbody>
+							<c:forEach items="${students}" var="students">
 							<tr>
-									<td>1</td>
-									<td>孙世成</td>
+									<td>${students.id}</td>
+									<td>${students.stuname}</td>
+									<td>男</td>
+									<td>${students.begintime}</td>
+									<td>${students.jobtime}</td>
+								    <td>${students.stustate}</td>
 									<td>
-									  男</td>
-									<td>2018-11-15 16:24:42.0</td>
-									<td>2019-04-25 16:24:55.0</td>
-								    <td>学习中</td>
-									<td>
-										<a href="student/list.action#" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#studentEditDialog" onclick="editstudent(1)">修改</a>
-										<a href="student/list.action#" class="btn btn-danger btn-xs" onclick="deletestudent(1)">删除</a>
+										<a href="student/list.action#" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#studentEditDialog" onclick="editstudent(${students.id})">修改</a>
+										<a href="student/list.action#" class="btn btn-danger btn-xs" onclick="deletestudent(${students.id})">删除</a>
 									</td>
 								</tr>
+								</c:forEach>
 							</tbody>
 					</table>
 					<div class="col-md-12 text-right">

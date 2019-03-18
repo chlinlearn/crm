@@ -2,25 +2,22 @@ package com.ecjtu.controller;
 
 import java.util.List;
 
-import javax.annotation.Resource;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import com.ecjtu.po.Refer;
-import com.ecjtu.service.ReferService;
+
+import com.ecjtu.po.Post;
+import com.ecjtu.service.PostService;
 
 @Controller
-public class ReferController {
+public class PostController {
 	@Autowired
-	private ReferService referService;
-	
-	@RequestMapping("/refer")
+	private PostService postService;
+	@RequestMapping("/post")
 	public String findAll(Model model) {
-		List<Refer> refers = referService.selectAll();
-		model.addAttribute("refers", refers);
-		return "refer";
+		List<Post> posts = postService.selectAll();
+		model.addAttribute("posts", posts);
+		return "/post";
 	}
-
 }

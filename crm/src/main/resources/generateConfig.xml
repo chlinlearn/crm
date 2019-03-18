@@ -32,7 +32,15 @@
         <property name="enableSubPackages" value="true"/>
       </javaClientGenerator>
          <!--下面是数据库表名和项目中需要生成类的名称，建议和数据库保持一致，如果有多个表，添加多个节点即可-->
-      <table tableName="crm_refer" domainObjectName="Refer" 
+      <table tableName="crm_staff" domainObjectName="Staff" 
+      	enableCountByExample="false" enableSelectByExample="false" 
+      	enableUpdateByExample="false" enableDeleteByExample="false">
+      </table>
+      <table tableName="crm_post" domainObjectName="Post" 
+      	enableCountByExample="false" enableSelectByExample="false" 
+      	enableUpdateByExample="false" enableDeleteByExample="false">
+      </table>
+	  <table tableName="crm_student" domainObjectName="Student" 
       	enableCountByExample="false" enableSelectByExample="false" 
       	enableUpdateByExample="false" enableDeleteByExample="false">
       </table>

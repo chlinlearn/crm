@@ -1,10 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<!DOCTYPE html>
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>学员关系管理系统CRM</title>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+	<title>学员关系管理系统CRM</title>
 	<!-- 引入css样式文件 -->
 	<!-- Bootstrap Core CSS -->
 	<link href="./css/bootstrap.min.css" rel="stylesheet">
@@ -343,8 +342,9 @@
 							</tr>
 						</thead>
 						<tbody>
+						<c:forEach items="${consults}" var="consults">
 							<tr>
-									<td>1</td>
+									<td>${consults}</td>
 									<td>Java基础</td> 
 									<td>2000.0</td>
 									<td>400</td>
@@ -354,28 +354,7 @@
 										<a href="course/list.action#" class="btn btn-danger btn-xs" onclick="deletecourse(1)">删除</a>
 									</td>
 								</tr>
-							<tr>
-									<td>2</td>
-									<td>Java就业</td> 
-									<td>12000.0</td>
-									<td>600</td>
-									<td></td>
-								<td>
-										<a href="course/list.action#" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#courseEditDialog" onclick="editcourse(2)">修改</a>
-										<a href="course/list.action#" class="btn btn-danger btn-xs" onclick="deletecourse(2)">删除</a>
-									</td>
-								</tr>
-							<tr>
-									<td>3</td>
-									<td>Java Web基础</td> 
-									<td>2600.0</td>
-									<td>48</td>
-									<td>JSP,JDBC,JSTL,JNDI</td>
-								<td>
-										<a href="course/list.action#" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#courseEditDialog" onclick="editcourse(3)">修改</a>
-										<a href="course/list.action#" class="btn btn-danger btn-xs" onclick="deletecourse(3)">删除</a>
-									</td>
-								</tr>
+							</c:forEach>
 							</tbody>
 					</table>
 					<div class="col-md-12 text-right">

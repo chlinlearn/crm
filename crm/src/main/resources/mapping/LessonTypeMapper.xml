@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ecjtu.dao.LessonTypeMapper">
+  <resultMap id="BaseResultMap" type="com.ecjtu.po.LessonType">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="lessonName" jdbcType="VARCHAR" property="lessonname" />
+    <result column="lessonCost" jdbcType="DOUBLE" property="lessoncost" />
+    <result column="totalTime" jdbcType="SMALLINT" property="totaltime" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, lessonName, lessonCost, totalTime, remark
+  </sql>
+  <select id="selectAll" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select * from crm_lessontype
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from crm_lessontype
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from crm_lessontype
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ecjtu.po.LessonType">
+    insert into crm_lessontype (id, lessonName, lessonCost, 
+      totalTime, remark)
+    values (#{id,jdbcType=INTEGER}, #{lessonname,jdbcType=VARCHAR}, #{lessoncost,jdbcType=DOUBLE}, 
+      #{totaltime,jdbcType=SMALLINT}, #{remark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ecjtu.po.LessonType">
+    insert into crm_lessontype
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="lessonname != null">
+        lessonName,
+      </if>
+      <if test="lessoncost != null">
+        lessonCost,
+      </if>
+      <if test="totaltime != null">
+        totalTime,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="lessonname != null">
+        #{lessonname,jdbcType=VARCHAR},
+      </if>
+      <if test="lessoncost != null">
+        #{lessoncost,jdbcType=DOUBLE},
+      </if>
+      <if test="totaltime != null">
+        #{totaltime,jdbcType=SMALLINT},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ecjtu.po.LessonType">
+    update crm_lessontype
+    <set>
+      <if test="lessonname != null">
+        lessonName = #{lessonname,jdbcType=VARCHAR},
+      </if>
+      <if test="lessoncost != null">
+        lessonCost = #{lessoncost,jdbcType=DOUBLE},
+      </if>
+      <if test="totaltime != null">
+        totalTime = #{totaltime,jdbcType=SMALLINT},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ecjtu.po.LessonType">
+    update crm_lessontype
+    set lessonName = #{lessonname,jdbcType=VARCHAR},
+      lessonCost = #{lessoncost,jdbcType=DOUBLE},
+      totalTime = #{totaltime,jdbcType=SMALLINT},
+      remark = #{remark,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

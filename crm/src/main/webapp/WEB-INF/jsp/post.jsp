@@ -351,52 +351,18 @@
 								<th>操作</th>
 							</tr>
 						</thead>
-						<tbody>
+							<tbody>
+							<c:forEach items="${posts}" var="posts">
 							<tr>
-									<td>1</td>
-									<td>教学总监</td> 
-									<td>教学部</td> 
+									<td>${posts.id}</td>
+									<td>${posts.postname}</td> 
+									<td>${posts.depid}</td> 
 									<td>
-										<a href="crmpost/list.action#" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#crmpostEditDialog" onclick="editcrmpost(1)">修改</a>
-										<a href="crmpost/list.action#" class="btn btn-danger btn-xs" onclick="deletecrmpost(1)">删除</a>
+										<a href="crmpost/list.action#" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#crmpostEditDialog" onclick="editcrmpost(${posts.id})">修改</a>
+										<a href="crmpost/list.action#" class="btn btn-danger btn-xs" onclick="deletecrmpost(${posts.id})">删除</a>
 									</td>
 								</tr>
-							<tr>
-									<td>2</td>
-									<td>Java讲师</td> 
-									<td>教学部</td> 
-									<td>
-										<a href="crmpost/list.action#" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#crmpostEditDialog" onclick="editcrmpost(2)">修改</a>
-										<a href="crmpost/list.action#" class="btn btn-danger btn-xs" onclick="deletecrmpost(2)">删除</a>
-									</td>
-								</tr>
-							<tr>
-									<td>3</td>
-									<td>学术主管</td> 
-									<td>教学部</td> 
-									<td>
-										<a href="crmpost/list.action#" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#crmpostEditDialog" onclick="editcrmpost(3)">修改</a>
-										<a href="crmpost/list.action#" class="btn btn-danger btn-xs" onclick="deletecrmpost(3)">删除</a>
-									</td>
-								</tr>
-							<tr>
-									<td>4</td>
-									<td>.NET讲师</td> 
-									<td>教学部</td> 
-									<td>
-										<a href="crmpost/list.action#" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#crmpostEditDialog" onclick="editcrmpost(4)">修改</a>
-										<a href="crmpost/list.action#" class="btn btn-danger btn-xs" onclick="deletecrmpost(4)">删除</a>
-									</td>
-								</tr>
-							<tr>
-									<td>5</td>
-									<td>班主任</td> 
-									<td>学工部</td> 
-									<td>
-										<a href="crmpost/list.action#" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#crmpostEditDialog" onclick="editcrmpost(5)">修改</a>
-										<a href="crmpost/list.action#" class="btn btn-danger btn-xs" onclick="deletecrmpost(5)">删除</a>
-									</td>
-								</tr>
+							</c:forEach>
 							</tbody>
 					</table>
 					<div class="col-md-12 text-right">

@@ -353,54 +353,20 @@
 							</tr>
 						</thead>
 						<tbody>
+						<c:forEach items="${staffs}" var="staffs">
 							<tr>
-									<td>1</td>
-									<td>杰克</td> 
-									<td>男</td>
-									<td></td>
-		 							<td>2000-01-01 08:49:34.0</td>		 							
-									<td>0</td> 
+									<td>${staffs.id}</td>
+									<td>${staffs.staffname}</td> 
+									<td>${staffs.gender}</td>
+									<td>${staffs.birthday}</td>
+		 							<td>${staffs.ondutydate}</td>		 							
+									<td>${staffs.postid}</td> 
 								<td>
-										<a href="crmstaff/list.action#" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#crmstaffEditDialog" onclick="editcrmstaff(1)">修改</a>
-										<a href="crmstaff/list.action#" class="btn btn-danger btn-xs" onclick="deletecrmstaff(1)">删除</a>
+										<a href="crmstaff/list.action#" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#crmstaffEditDialog" onclick="editcrmstaff(${staffs.id})">修改</a>
+										<a href="crmstaff/list.action#" class="btn btn-danger btn-xs" onclick="deletecrmstaff(${staffs.id})">删除</a>
 									</td>
 								</tr>
-							<tr>
-									<td>2</td>
-									<td>露丝</td> 
-									<td>女</td>
-									<td></td>
-		 							<td>2013-04-16 00:00:00.0</td>		 							
-									<td>1</td> 
-								<td>
-										<a href="crmstaff/list.action#" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#crmstaffEditDialog" onclick="editcrmstaff(2)">修改</a>
-										<a href="crmstaff/list.action#" class="btn btn-danger btn-xs" onclick="deletecrmstaff(2)">删除</a>
-									</td>
-								</tr>
-							<tr>
-									<td>3</td>
-									<td>汤姆</td> 
-									<td>男</td>
-									<td></td>
-		 							<td>2014-04-24 00:00:00.0</td>		 							
-									<td>1</td> 
-								<td>
-										<a href="crmstaff/list.action#" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#crmstaffEditDialog" onclick="editcrmstaff(3)">修改</a>
-										<a href="crmstaff/list.action#" class="btn btn-danger btn-xs" onclick="deletecrmstaff(3)">删除</a>
-									</td>
-								</tr>
-							<tr>
-									<td>4</td>
-									<td>海丽</td> 
-									<td>女</td>
-									<td></td>
-		 							<td>2008-06-11 08:48:46.0</td>		 							
-									<td>6</td> 
-								<td>
-										<a href="crmstaff/list.action#" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#crmstaffEditDialog" onclick="editcrmstaff(4)">修改</a>
-										<a href="crmstaff/list.action#" class="btn btn-danger btn-xs" onclick="deletecrmstaff(4)">删除</a>
-									</td>
-								</tr>
+							</c:forEach>
 							</tbody>
 					</table>
 					<div class="col-md-12 text-right">

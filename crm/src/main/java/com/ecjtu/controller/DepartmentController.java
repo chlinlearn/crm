@@ -10,10 +10,11 @@ import com.ecjtu.service.DepartmentService;
 @Controller
 public class DepartmentController {
 	@Autowired
-	private DepartmentService DepartmentService;
-	@RequestMapping("/findAll")
+	private DepartmentService departmentService;
+	
+	@RequestMapping("/department")
 	public String findAll(Model model) {
-		List<Department> departments = DepartmentService.selectAll();
+		List<Department> departments = departmentService.selectAll();
 		model.addAttribute("departments", departments);
 		return "department";
 	}
